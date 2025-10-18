@@ -1,10 +1,12 @@
 text = input('Введите текст: ')
+
 lower_alpha = 'abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 upper_alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 alphabets = lower_alpha + upper_alpha
 
 # преобразуем в нижний регистр
 lowertext = ''
+
 for ch in text:
     if ch in lower_alpha:
         lowertext += ch
@@ -17,6 +19,7 @@ for ch in text:
 # создаем список слов
 words = []
 word = ''
+
 for i in range(len(lowertext)):
     if lowertext[i] in alphabets:
         word += lowertext[i]
@@ -30,6 +33,7 @@ if word:
 
 # создаем словарь и подсчитываем количество каждого слова
 counter = {}
+
 for word in words:
     if word in counter:
         counter[word] += 1
@@ -39,8 +43,10 @@ for word in words:
 # создаем топ слов
 items = list(counter.items())
 n = len(items)
+
 for i in range(n):
     max_idx = i
+    
     for k in range(i + 1, n):
         if items[k][1] > items[max_idx][1]:
             max_idx = k
