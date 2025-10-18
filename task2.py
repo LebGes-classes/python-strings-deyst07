@@ -24,6 +24,7 @@ for ch in text:
 text2 = ''.join(text2_parts)
 
 word = ''
+
 for ch in text2:
     if ch in alphabets:
         word += ch
@@ -49,5 +50,4 @@ for char in text2:
     else:
         code += char
 
-print(words)
 print(f"Зашифрованный текст (сдвиг на {K} позиций): {code}")
