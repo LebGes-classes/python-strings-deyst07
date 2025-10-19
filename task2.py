@@ -7,10 +7,20 @@ code = ''
 words = []
 K = 0
 
+text_before_dot = ''
+dot_found = False
+
+for ch in text:
+    if not dot_found:
+        if ch == '.':
+            dot_found = True
+        else:
+            text_before_dot += ch
+
 text2_parts = []
 count = 0 
 
-for ch in text:
+for ch in text_before_dot:
     if ch in alphabets:
         text2_parts.append(ch)
         count += 1
@@ -50,4 +60,4 @@ for char in text2:
     else:
         code += char
 
-print(f"Зашифрованный текст (сдвиг на {K} позиций): {code}")
+print(f"Зашифрованный текст (сдвиг на {K} позиций): {code}.")

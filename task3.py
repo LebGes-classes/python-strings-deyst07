@@ -16,7 +16,7 @@ for ch in text:
     else:
         lowertext += ch
 
-# создаем список слов
+# собираем слова
 words = []
 word = ''
 
@@ -31,7 +31,7 @@ for i in range(len(lowertext)):
 if word:
     words.append(word)
 
-# создаем словарь и подсчитываем количество каждого слова
+# количество вхождений каждого слова
 counter = {}
 
 for word in words:
@@ -40,7 +40,7 @@ for word in words:
     else:
         counter[word] = 1
 
-# создаем топ слов
+# сортировка
 items = list(counter.items())
 n = len(items)
 
@@ -52,5 +52,8 @@ for i in range(n):
             max_idx = k
     items[i], items[max_idx] = items[max_idx], items[i]
 
-for word, count in items:
+# --- 5. Вывод топ-5 ---
+print("\nТоп-5 самых частых слов:\n")
+for i in range(min(5, len(items))):
+    word, count = items[i]
     print(f"{word}: {count}")
