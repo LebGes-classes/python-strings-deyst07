@@ -52,7 +52,7 @@ for i in range(n):
             max_idx = k
     items[i], items[max_idx] = items[max_idx], items[i]
 
-# --- 5. Вывод топ-5 ---
+# вывод топ-5
 print("\nТоп-5 самых частых слов:\n")
 for i in range(min(5, len(items))):
     word, count = items[i]
